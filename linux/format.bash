@@ -2,7 +2,6 @@
 
 . ../.env
 
-mkdir -p ../"$NAME"
-cd ../"$NAME" || exit
+mkdir -p "$MACHINE"
 
-qemu-img create -f qcow2 "$QCOW2" 20G
+qemu-img create -f qcow2 "$MACHINE/$QCOW2" 20G
