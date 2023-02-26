@@ -17,11 +17,13 @@ Windowsが標準で提供しているLinux仮想環境です。
 
 ### WSLのインストール
 - Windows11
+
     PowerShell上で以下のコマンドを実行するだけです。
     ```bash
     wsl --install Ubuntu
     ```
 - Windows10
+
     [Microsoft公式ドキュメント](https://learn.microsoft.com/ja-jp/windows/wsl/install-manual)
 
 ## WSLを使用しない場合
@@ -51,11 +53,13 @@ Windowsが標準で提供しているLinux仮想環境です。
 ## 前提ライブラリの導入
 - Windows(WSLを使用しない場合)
     1. QEMUのインストール
+
         ```powershell
         winget install git
         winget install qemu
         ```
     1. QEMUのパスを通す
+
         Wingetでは自動でパスまで通してくれることが多い(Gitなど)のですが、QEMUは手動で追加する必要があります。
         `C:\Program Files\qemu`をWindowsのPathに追加しましょう。
 
@@ -63,11 +67,13 @@ Windowsが標準で提供しているLinux仮想環境です。
 
         [Windows 10の環境変数に PATH を追加する方法](https://anykey.bz/program/win10-path/)
 - Mac 
+
     [QEMU公式](https://www.qemu.org/download/#macos)
     ```bash
     brew install qemu git curl
     ```
 - Linux(WSL)
+
     [QEMU公式](https://www.qemu.org/download/#linux)
     ```bash
     sudo add-apt-repository ppa:canonical-server/server-backports
@@ -79,12 +85,14 @@ Windowsが標準で提供しているLinux仮想環境です。
 ## 基本的な使い方
 ### インストール
 1. リポジトリのクローン
+
     ```bash
     cd
     git clone https://github.com/infra-club-fmlorg/qemu-scripts.git
     cd qemu-scripts
     ```
 1. Ubuntuの[ISOファイル](https://www.ubuntulinux.jp/download/ja-remix)のダウンロード
+
     ```bash
     # サイズが大きいので注意
     curl -L -o ubuntu.iso http://cdimage.ubuntulinux.jp/releases/22.04/ubuntu-ja-22.04-desktop-amd64.iso
@@ -99,6 +107,7 @@ Windowsが標準で提供しているLinux仮想環境です。
             - Ubuntuのインストールに関しては各々で調べてください
         1. `bash run.bash`(二回目以降の起動)
 1. SSHでホストマシンから接続
+
     [Ubuntu 20.04 - SSHのインストールと接続方法](https://codechacha.com/ja/ubuntu-install-openssh/)
 
     ホストマシンからSSHする場合は以下のようになります。
